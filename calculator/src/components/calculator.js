@@ -2,22 +2,24 @@ import React, { useState } from 'react'
 
 const Calculator = () => {
 
-  const [number, setNumber] = useState('')
+  const [number1, setNumber1] = useState(0)
+  const [number2, setNumber2] = useState(0)
 
-  const updateNumber = (event) => {
-    setNumber(event.target.value)
-  }
 
   return(
     <div>
 
       <h1>Calculator</h1>
         <div class="form-group">
-          <input type="text" name="search" onChange={(event) => setNumber(event.target.value)} value={number} /> 
+          <input 
+            type="number" 
+            placeholder="0" 
+            value={number1} 
+            onChange={event => setNumber1(event.target.value)} /> 
         </div>
 
       <form>
-        <select name="calulate" id="calculate">
+        <select name="calculate" id="calculate">
           <option value="add">+</option>
           <option value="subtract">-</option>
           <option value="multiply">*</option>
@@ -26,13 +28,17 @@ const Calculator = () => {
       </form>
 
         <div class="form-group">
-          <input type="text" name="search" onChange={(event) => setNumber(event.target.value)} value={number} /> 
+          <input 
+            type="number" 
+            placeholder="0" 
+            value={number2} 
+            onChange={event => setNumber2(event.target.value)} /> 
         </div>
-        
+
         <button>=</button>
 
         <div class="form-group">
-          <input type="text" name="search" onChange={(event) => setNumber(event.target.value)} value={number} /> 
+          <input type="number" name="search" /> 
         </div>
     </div>
           
