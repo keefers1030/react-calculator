@@ -4,7 +4,23 @@ const Calculator = () => {
 
   const [number1, setNumber1] = useState(0)
   const [number2, setNumber2] = useState(0)
+  const [total, setTotal] = useState(number1, number2)
 
+
+  const calculate = () => {
+    switch (calculate) {
+      case '+':
+        return setTotal((number1 + number2))
+      case '-':
+        return setTotal((number1 - number2))
+      case '*':
+        return setTotal((number1 * number2))
+      case '÷':
+        return setTotal((number1 / number2))
+      default:
+        break;
+    }
+  }
 
   return(
     <div>
@@ -35,11 +51,9 @@ const Calculator = () => {
             onChange={event => setNumber2(event.target.value)} /> 
         </div>
 
-        <button>=</button>
+        <button onClick={calculate}>=</button>
 
-        <div class="form-group">
-          <input type="number" name="search" /> 
-        </div>
+        <h2>{total}</h2>
     </div>
           
   )
