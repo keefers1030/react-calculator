@@ -4,13 +4,16 @@ const Calculator = () => {
 
   const [number1, setNumber1] = useState(0)
   const [number2, setNumber2] = useState(0)
-  const [total, setTotal] = useState(number1, number2)
+  const [total, setTotal] = useState('')
+  const [operator, setOperator] = useState('')
 
 
   const calculate = () => {
-    switch (calculate) {
+    const operation = {operator}
+    switch (operation) {
       case '+':
-        return setTotal((number1 + number2))
+        let total= (number1 + number2)
+        return total
       case '-':
         return setTotal((number1 - number2))
       case '*':
@@ -20,13 +23,17 @@ const Calculator = () => {
       default:
         break;
     }
+    console.log(number1)
+    console.log(number2)
+    console.log(total)
+
   }
 
   return(
     <div>
 
-      <h1>Calculator</h1>
-        <div class="form-group">
+      <h1>react calculator</h1>
+        <div className="form-group">
           <input 
             type="number" 
             placeholder="0" 
@@ -35,15 +42,15 @@ const Calculator = () => {
         </div>
 
       <form>
-        <select name="calculate" id="calculate">
-          <option value="add">+</option>
-          <option value="subtract">-</option>
-          <option value="multiply">*</option>
-          <option value="divide">÷</option>
+        <select name="operator" value = {operator} id="operator" onChange={event => setOperator(event.target.value)}>
+          <option value='+'>+</option>
+          <option value='-'>-</option>
+          <option value='*'>*</option>
+          <option value='÷'>÷</option>
         </select>
       </form>
 
-        <div class="form-group">
+        <div className="form-group">
           <input 
             type="number" 
             placeholder="0" 
@@ -52,8 +59,9 @@ const Calculator = () => {
         </div>
 
         <button onClick={calculate}>=</button>
+        
 
-        <h2>{total}</h2>
+        <h2 value={total}>{total}</h2>
     </div>
           
   )
