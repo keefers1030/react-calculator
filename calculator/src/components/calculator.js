@@ -25,37 +25,31 @@ const Calculator = () => {
 
   return(
     <div>
+        <h1>React Calculator</h1>
 
-      <h1>react calculator</h1>
         <div className="form-group">
           <input 
             type="number" 
             value={number1} 
             onChange={event => setNumber1(event.target.value)} /> 
-        </div>
 
-      <select className="operator" onChange={event => setOperator(event.target.value)}>
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="÷">÷</option>
-      </select>
+            <select className="operator" onChange={event => setOperator(event.target.value)}>
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="÷">÷</option>
+            </select>
 
-        <div className="form-group">
-          <input 
-            type="number" 
-            value={number2} 
-            onChange={event => setNumber2(event.target.value)} /> 
-        </div>
-        
+            <input 
+              type="number" 
+              value={number2} 
+              onChange={event => setNumber2(event.target.value)} /> 
 
-        <div className="answer">
-          <button onClick={calculate}>=</button>
-          <h2>{total}</h2>
-        </div>
+            <button onClick={calculate}>=</button>
+                    </div>
 
-
-    </div>
+            <h2 className="total">{total}</h2>
+  </div>
           
   )
 }
