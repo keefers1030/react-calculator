@@ -10,7 +10,7 @@ const Calculator = () => {
   const calculate = () => {
     switch (operator) {
       case '+':
-        return setTotal(parseInt(number1 + number2))
+        return setTotal((parseFloat(number1) + parseFloat(number2)))
       case '-':
         return setTotal((number1 - number2))
       case '*':
@@ -38,7 +38,7 @@ const Calculator = () => {
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
-        <option value="/">/</option>
+        <option value="÷">÷</option>
       </select>
 
         <div className="form-group">
