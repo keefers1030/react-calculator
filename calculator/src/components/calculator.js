@@ -10,17 +10,16 @@ const Calculator = () => {
   const calculate = () => {
     switch (operator) {
       case '+':
-        return setTotal((parseFloat(number1) + parseFloat(number2)))
+        return setTotal(parseFloat(number1) + parseFloat(number2))
       case '-':
-        return setTotal((number1 - number2))
+        return setTotal(parseFloat(number1) - parseFloat(number2))
       case '*':
-        return setTotal((number1 * number2))
+        return setTotal(parseFloat(number1) * parseFloat(number2))
       case '÷':
-        return setTotal((number1 / number2))
+        return setTotal(parseFloat(number1) / parseFloat(number2))
       default:
         break;
     }
-
   }
 
   return(
@@ -34,6 +33,7 @@ const Calculator = () => {
             onChange={event => setNumber1(event.target.value)} /> 
 
             <select className="operator" onChange={event => setOperator(event.target.value)}>
+              <option value="Click">Click</option>
               <option value="+">+</option>
               <option value="-">-</option>
               <option value="*">*</option>
