@@ -5,7 +5,7 @@ const Calculator = () => {
   const [number1, setNumber1] = useState('')
   const [number2, setNumber2] = useState('')
   const [total, setTotal] = useState('')
-  const [operator, setOperator] = useState('')
+  const [operator, setOperator] = useState('+')
 
   const calculate = () => {
     switch (operator) {
@@ -20,6 +20,7 @@ const Calculator = () => {
       default:
         break;
     }
+
   }
 
   return(
@@ -33,7 +34,6 @@ const Calculator = () => {
             onChange={event => setNumber1(event.target.value)} /> 
 
             <select className="operator" onChange={event => setOperator(event.target.value)}>
-              <option value="Click">Click</option>
               <option value="+">+</option>
               <option value="-">-</option>
               <option value="*">*</option>
