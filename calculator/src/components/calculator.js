@@ -7,8 +7,8 @@ const Calculator = () => {
   const [total, setTotal] = useState('')
   const [operator, setOperator] = useState('+')
 
-  const calculate = () => {
-    switch (operator) {
+  const calculate = () => {      
+      switch (operator) {
       case '+':
         return setTotal(parseFloat(number1) + parseFloat(number2))
       case '-':
