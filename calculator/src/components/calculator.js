@@ -20,7 +20,6 @@ const Calculator = () => {
       default:
         break;
     }
-
   }
 
   return(
@@ -53,5 +52,7 @@ const Calculator = () => {
           
   )
 }
+
+// forgot to create a new branch
 
 export default Calculator;
